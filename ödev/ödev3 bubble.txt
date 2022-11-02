@@ -1,0 +1,53 @@
+#include <stdio.h>
+#define BOYUT 1000
+
+int dizi[BOYUT - 1];
+
+void bubbleSort(int x[])
+{
+    int i, j;
+
+    for(i = 1; i < BOYUT; i++)
+    {
+        for( j = 0; j < BOYUT - 1; j++)
+        {
+            if(dizi[j] > dizi[j+1])
+                swapf(j, j+1);
+        }
+    }
+}
+
+void printSorted()
+{
+    int i;
+    for( i = 0; i < BOYUT - 1; i++)
+    {
+        printf("%d\n", dizi[i]);
+    }
+}
+
+void swapf(int x, int y)
+{
+    int temp;
+    temp = dizi[x];
+    dizi[x] = dizi[y];
+    dizi[y] = temp;
+
+}
+
+void init()
+{
+    int i;
+    for( i = 0; i < BOYUT - 1; i++)
+    {
+        dizi[i] = rand()%10000;
+    }
+}
+
+int main()
+{
+    init();
+    bubbleSort(dizi);
+    printSorted();
+    return 0;
+}

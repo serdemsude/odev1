@@ -1,0 +1,17 @@
+//1000'e kadar olan 3'ün veya 5'in katları sayıların toplamını bulduran algoritma.
+#include <stdio.h>
+int toplama(int a){
+    int toplam=0;
+    for(int i=0; i<1000; i++){
+        if(i%3==0 || i%5==0){
+            toplam+=i;
+        }
+    }
+return toplam;
+    
+}
+int main(){
+    int toplam;
+    printf("%d\n",toplama(toplam));
+    return 0;
+}

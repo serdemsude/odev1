@@ -1,0 +1,43 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int  a, b, f, pozisyon, swap;
+int main(){
+	printf("rastgele oluşturup sıralamak istediğiniz sayı miktarını giriniz: ");
+	scanf("%i",&f);
+	selectionsort(f);
+	   
+   return 0;
+}
+
+selectionsort(int f){
+	int dizi[f];
+	for(a= 0; a<f ;a++){
+        dizi[a]=rand()%10000;
+        printf("%d\t", dizi[a]);
+}
+ 
+  
+ //secerek sıralama (selection sort) algoritması
+   for (a=0 ; a < (f - 1); a++){
+      pozisyon = a;
+ 
+      for ( b= a+1 ; b< f; b++){
+         
+	   		if (dizi[pozisyon] > dizi[b])
+             pozisyon = b;
+        }
+      		if (pozisyon != a){
+      	     swap = dizi[a];
+             dizi[a] = dizi[pozisyon];
+        	 dizi[pozisyon] = swap;
+        }
+    }
+ 
+   printf("\n sıralanmıs sayılar: \n");
+ //sıralama \t
+  for (a = 0 ; a < f ; a++){
+      printf("%d\t", dizi[a]);
+    }
+  return 0;
+}

@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int karelertop(int a){
+    int i;
+    int toplam=0;
+    for  (i=1; i<=100; i++ ){
+   
+      toplam = toplam + i*i;
+    }
+    return toplam;
+}
+
+int toplamkare(int b){
+    int i;
+    int toplm=0;
+    for(i=1; i<=100; i++){
+        toplm+=i;
+    
+    }
+    return toplm*toplm;
+}
+int main() {
+    int toplam;
+    int toplm;
+    int sonuc;
+    sonuc = toplamkare(toplm)-karelertop(toplam);
+    printf("ilk yüz sayının karelerinin toplamı:%d\n", karelertop(toplam));
+    printf("ilk yüz sayının toplamının karesi:%d\n", toplamkare(toplm));
+    printf(" İlkyüz doğal sayının kareleri toplamı ile toplamın karesi arasındaki fark:%d\n", sonuc);
+    
+    return 0;
+}
